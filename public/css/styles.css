@@ -1,5 +1,7 @@
 :root {
     --mainPadding: 1em;
+    --transparentBlack: #00000022;
+    --gradient: linear-gradient(to bottom right, #FCE38A, #F38181);
 }
 
 * {
@@ -11,26 +13,84 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: 'Archimede'
+}
+
+a {
+    text-decoration: none;
+    color: #f38181;
+}
+
+a:hover {
+    color: #982d04;
 }
 
 nav {
-    /* Votre code ici */
+    background-color: white;
+    border-bottom: 2px solid var(--transparentBlack);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    min-height: 50px;
+    max-height: 100px;
+    display: flex;
+    box-shadow: 0 0 10px var(--transparentBlack);
+    overflow: hidden;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    margin: auto;
+}
+
+#logo{
+    width: 100px;
+    position: relative;
+    justify-self: flex-end;
+    animation: rotate 15s infinite;
+
+}
+
+.disabled {
+    color: grey !important;
+    pointer-events: none;
 }
 
 header {
     height: 40vh;
-    background: url("URL") lightblue;
+    background: var(--gradient);
     display: flex;
 }
 
 header div {
     margin: auto;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    font-size: 5em;
+    color: #FCE38A;
+    text-shadow: 5px 5px 0px var(--transparentBlack)
+}
+
+header h2 {
+    color: white;
+    font-family: 'Smallest Pixel-7';
 }
 
 main {
-    padding: 5em;
+    padding: var(--mainPadding);
     flex-grow: 1;
     display: flex;
+    background:#ccc;
 }
 
 section {
@@ -38,13 +98,15 @@ section {
     margin: auto;
 }
 
+/* PRODUITS */
+
 .product-container {
     display: grid;
     grid-gap: var(--mainPadding);
 }
 
 .card {
-    background: #e4e4e4;
+    background: #FFF;
     box-shadow: 0 0 10px #00000022;
     display: flex;
     flex-direction: column;
@@ -77,6 +139,7 @@ section {
 .card-image {
     background-size: cover;
     height: 15vh;
+    border-bottom: 2px solid var(--transparentBlack);
 }
 
 .card h2 {
@@ -93,21 +156,86 @@ section {
 }
 
 .card-footer {
-    background: #00000022;
+    background: #FCE38A;
     padding: var(--mainPadding);
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
+}
+
+.prix {
+    margin: auto 0;
+    display: flex;
+    width: 100%;
 }
 
 .promo {
     color: red;
+    font-size: 3em;
+    animation: rotate 1s linear infinite;
+    margin: auto;
+}
+
+.promo:hover {
+    animation-duration: 0.1s
+}
+
+.add:hover {
+    animation: scale 5s forwards;
+}
+
+/* CONTACT */
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical ;
+}
+input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical ;
+}
+
+button {
+    background-color: #00472d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    animation: spamton 0.5s steps(2) infinite
+
+}
+
+button[type=submit]:hover {
+    background-color: #00f60c;
+    color: black;
+}
+
+.formulaire {
+    margin: auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
 }
 
 footer {
     height: 20vh;
+    background: #FFF;
     display: flex;
-    justify-content: space-around;
-    background: lightcoral;
+}
+
+footer div {
+    margin: auto;
 }
 
 footer ul {
@@ -119,9 +247,18 @@ footer ul {
     margin: auto;
 }
 
+/* RESPONSIVE */
+
 @media (min-width: 768px) {
     .product-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .formulaire {
+        max-width: 50%;
+    }
+    nav {
+        position: sticky;
     }
 }
 
@@ -134,5 +271,36 @@ footer ul {
 @media (min-width: 1200px) {
     .product-container {
         grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ANIMATIONS */
+
+@keyframes spamton {
+    from {
+        background-color: #00472d
+    }
+    to {
+        background-color: #00f60c;
+    }
+}
+
+@keyframes scale {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(5);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
     }
 }
