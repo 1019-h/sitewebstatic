@@ -24,7 +24,7 @@ header div {
 }
 
 main {
-    padding: 5em;
+    padding: 2em;
     flex-grow: 1;
 }
 
@@ -81,8 +81,8 @@ input[type=submit]:hover {
 }
 
 .formulaire {
-    width: 50%;
-    margin-left: 25%;/*pour centrer le form*/
+    width: 100%;
+    margin-left: auto;/*pour centrer le form*/
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
