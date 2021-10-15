@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    /* Votre code ici */
+}
+
+header {
+    height: 40vh;
+    background: url("URL") lightblue;
+    display: flex;
+}
+
+header div {
+    margin: auto;
+}
+
+main {
+    padding: 5em;
+    flex-grow: 1;
+}
+
+footer {
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    background: lightcoral;
+}
+
+footer ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    list-style: none;
+    margin: auto;
+}
