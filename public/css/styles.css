@@ -186,7 +186,7 @@ section {
 
 /* CONTACT */
 
-input[type=text], select, textarea {
+input[type=text],input[type=email], select, textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -195,14 +195,8 @@ input[type=text], select, textarea {
     margin-bottom: 16px;
     resize: vertical ;
 }
-input[type=email], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical ;
+textarea{
+    height:200px;
 }
 
 button {
