@@ -66,6 +66,7 @@ header {
     height: 40vh;
     background: var(--gradient);
     display: flex;
+    min-height: 550px;
 }
 
 header div {
